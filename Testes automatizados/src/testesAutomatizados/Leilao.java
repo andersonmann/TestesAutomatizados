@@ -11,7 +11,13 @@ import java.util.List;
  *
  */
 public class Leilao {
+	private String nome;
 	private List<Lance> lances = new ArrayList<>();
+
+	public Leilao(String nome) {
+		super();
+		this.setNome(nome);
+	}
 
 	public List<Lance> getLances() {
 		return lances;
@@ -20,7 +26,28 @@ public class Leilao {
 	public void setLances(List<Lance> lances) {
 		this.lances = lances;
 	}
-	
-	
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Leilao [nome=" + nome + "]";
+	}
+
+	public void propoe(Lance lance) {
+		lances.add(lance);
+
+	}
 
 }
