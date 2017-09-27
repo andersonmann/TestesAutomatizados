@@ -27,5 +27,4 @@ public class Teste {
 		System.out.println(menorEsperado == leiloeiro.getMenorLance());
 
 	}
-
 }
