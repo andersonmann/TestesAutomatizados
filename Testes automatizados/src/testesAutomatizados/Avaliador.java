@@ -27,7 +27,7 @@ public class Avaliador {
 	}
 
 	public double getMenorLance() {
-		return maiorDeTodos;
+		return menorDeTodos;
 	}
 
 }
