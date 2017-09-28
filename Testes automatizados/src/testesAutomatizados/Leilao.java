@@ -19,6 +19,11 @@ public class Leilao {
 		this.setNome(nome);
 	}
 
+	public void propoe(Lance lance) {
+		lances.add(lance);
+
+	}
+
 	public List<Lance> getLances() {
 		return lances;
 	}
@@ -43,11 +48,6 @@ public class Leilao {
 	@Override
 	public String toString() {
 		return "Leilao [nome=" + nome + "]";
-	}
-
-	public void propoe(Lance lance) {
-		lances.add(lance);
-
 	}
 
 }
