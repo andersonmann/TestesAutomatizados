@@ -1,7 +1,8 @@
 package testesAutomatizados;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
-import org.junit.Assert;
 
 public class AvaliadorTest {
 
@@ -28,8 +29,8 @@ public class AvaliadorTest {
 		double menorEsperado = 250;
 
 		// exibindo a saída
-		Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
-		Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
+		assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+		assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
 	}
 
 	@Test
@@ -44,8 +45,22 @@ public class AvaliadorTest {
 		Avaliador leiloeiro = new Avaliador();
 		leiloeiro.avalia(leilao);
 
-		Assert.assertEquals(3000, leiloeiro.getMaiorLance(), 0.0001);
-		Assert.assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
+		assertEquals(3000, leiloeiro.getMaiorLance(), 0.0001);
+		assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
+
+	}
+
+	@Test
+	public void deveEntenderLeilaoComApenasUmLance() {
+		Usuario joao = new Usuario("Joao");
+		Leilao leilao = new Leilao("Playstation 3 Novo");
+		leilao.propoe(new Lance(joao, 1000.0));
+
+		Avaliador leiloeiro = new Avaliador();
+		leiloeiro.avalia(leilao);
+
+		assertEquals(1000, leiloeiro.getMaiorLance(), 0.0001);
+		assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
 
 	}
 
