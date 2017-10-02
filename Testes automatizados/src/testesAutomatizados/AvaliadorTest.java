@@ -15,7 +15,7 @@ public class AvaliadorTest {
 	private Usuario maria;
 
 	@Before
-	// novo método que cria o avaliador
+	// novo método que cria o avaliador e usuarios
 	public void criaAvaliador() {
 		this.leiloeiro = new Avaliador();
 		this.joao = new Usuario("João");
@@ -74,12 +74,10 @@ public class AvaliadorTest {
 	@Test
 	public void deveEncontrarOsTresMaioresLances() {
 
-		Leilao leilao = new Leilao("Playstation 3 Novo");
+		Leilao leilao = new CriadorDeLeilao().para("Playstation 3 Novo").lance(joao, 100.0).lance(maria, 200.0)
+				.lance(joao, 300.0).lance(maria, 400.0).constroi();
 
-		leilao.propoe(new Lance(joao, 100.0));
-		leilao.propoe(new Lance(maria, 200.0));
-		leilao.propoe(new Lance(joao, 300.0));
-		leilao.propoe(new Lance(maria, 400.0));
+		
 
 		leiloeiro.avalia(leilao);
 
