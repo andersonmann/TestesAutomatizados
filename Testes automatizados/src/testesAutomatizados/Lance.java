@@ -30,4 +30,9 @@ public class Lance {
 		this.valor = valor;
 	}
 
+	public String getUsuario() {
+
+		return usuario.getNome();
+	}
+
 }
