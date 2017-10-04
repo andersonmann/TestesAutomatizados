@@ -4,6 +4,7 @@
 package testesAutomatizados;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,12 +12,13 @@ import java.util.List;
  *
  */
 public class Leilao {
-	private String nome;
-	private List<Lance> lances = new ArrayList<>();
+	private String descricao;
+	private List<Lance> lances;
 
-	public Leilao(String nome) {
-		super();
-		this.setNome(nome);
+	public Leilao(String descricao) {
+		this.descricao = descricao;
+		this.lances = new ArrayList<Lance>();
+
 	}
 
 	public void propoe(Lance lance) {
@@ -24,20 +26,12 @@ public class Leilao {
 
 	}
 
+	public String getDescricao() {
+		return descricao;
+	}
+
 	public List<Lance> getLances() {
-		return lances;
-	}
-
-	public void setLances(List<Lance> lances) {
-		this.lances = lances;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+		return Collections.unmodifiableList(lances);
 	}
 
 	/*
@@ -47,7 +41,7 @@ public class Leilao {
 	 */
 	@Override
 	public String toString() {
-		return "Leilao [nome=" + nome + "]";
+		return "Leilao [descricao =" + descricao + "]";
 	}
 
 }

@@ -92,6 +92,7 @@ public class AvaliadorTest {
 
 		assertEquals(3000, leiloeiro.getMaiorLance(), 0.0001);
 		assertEquals(1000, leiloeiro.getMenorLance(), 0.0001);
+		
 	}
 
 	@Test
