@@ -14,7 +14,7 @@ import org.junit.Test;
 public class LeilaoTest {
 
 	/*
-	 * Umapessoanãopodepropordoislancesemsequência; 
+	 * Uma pessoa não pode propor dois lances em sequência; 
 	 */
 	@Test
 	public void deveReceberUmLance() {
@@ -30,7 +30,7 @@ public class LeilaoTest {
 	}
 	
 	/*
-	 * Umapessoanãopodedarmaisdoquecincolancesnomesmoleilão
+	 * Uma pessoa não pode dar mais do que cinco lances no mesmo leilão
 	 */
 	@Test
 	public void deveReceberVariosLances() {
